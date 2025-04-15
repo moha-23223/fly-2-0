@@ -1,0 +1,60 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SCORM Module</title>
+</head>
+<body>
+  <h1>Welcome to the SCORM Module</h1>
+  <button onclick="sendScore()">Complete Module</button>
+  <script src="../js/scorm_api.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SCORM Game</title>
+  <script>
+    async function startGame() {
+      const res = await fetch('/play?steps=10', { method: 'POST' });
+      const data = await res.json();
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function submitScore() {
+      const score = parseInt(document.getElementById("scoreInput").value);
+      const formData = new FormData();
+      formData.append("score", score);
+
+      const res = await fetch('/score', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await res.json();
+      alert(`Score updated: ${data.score}`);
+    }
+
+    async function getState() {
+      const res = await fetch('/game/state');
+      const data = await res.json();
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</head>
+<body>
+  <h1>SCORM Game</h1>
+
+  <button onclick="startGame()">Start Game</button>
+  <br><br>
+
+  <label for="scoreInput">Score:</label>
+  <input type="number" id="scoreInput" value="0" />
+  <button onclick="submitScore()">Submit Score</button>
+  <br><br>
+
+  <button onclick="getState()">Get Game State</button>
+  <pre id="output" style="background:#eee;padding:10px;"></pre>
+</body>
+</html> -->

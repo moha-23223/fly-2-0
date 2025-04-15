@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="SimpleScormPackage" version="1" 
+          xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
+          xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <adlcp:location>metadata.xml</adlcp:location>
+  </metadata>
+  
+  <organizations default="main_org">
+    <organization identifier="main_org">
+      <title>Simple SCORM</title>
+      <item identifier="item_1" identifierref="resource_1">
+        <title>SCORM Module</title>
+      </item>
+    </organization>
+  </organizations>
+  
+  <resources>
+    <resource identifier="resource_1" type="webcontent" 
+              adlcp:scormtype="sco" href="content/index.html">
+      <file href="content/index.html"/>
+      <file href="js/scorm_api.js"/>
+    </resource>
+  </resources>
+</manifest>
